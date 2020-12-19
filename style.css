@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Sniglet';
+  }
+
+html {
+    background-color: rgb(32, 190, 32);
+}
+
+header {
+    background-color: rgb(32, 190, 32);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 5px 0px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.wam-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; 
+    padding-top: 75px;
+    
+}
+
+.start-game {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    font-size: 32px;
+    padding: 5px;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    border-radius: 5px;
+    width: 960px;
+    height: 540px;
+    background: url('images/wam-background.jpg');
+    padding: 20px;
+    border: 2px solid black;
+  }
+
+.plot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.hole {
+    background: url('images/dirt.svg');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: top;
+    grid-row: 3;
+    grid-column: 1 / span 3;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.mole {
+    background: url('images/mole.png');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    grid-row: 2 / 4;
+    grid-column: 2;
+    transform: translateY(10%);
+    transition: 0.2s;
+    visibility: hidden;
+    }
+
+.active {
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.score {
+    padding-left: 15px;
+}
+
+.game-title {
+    font-size: 60px;
+}
